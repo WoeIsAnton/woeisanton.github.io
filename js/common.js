@@ -1,9 +1,5 @@
 $(function() {
 
-	// $(".main_head").myParallax({
-	// 	"speed" : "15"
-	// });
-
 	$(".mouse").click(function() {
 		$("html, body").animate({
 			scrollTop : $("#about").offset().top
@@ -21,15 +17,13 @@ $(function() {
 		return false;
 	});
 
-
-
 	$(".menu-toggle").click(function() {
 		if ($(".top_mnu").is(":visible")) {
 			$(".top_text").css("opacity", "1");
 			$(".top_mnu").fadeOut(600);
 			$(".top_mnu li a").removeClass("fadeInUp animated");
 		} else {
-			$(".top_text").css("opacity", ".1");
+			$(".top_text").css("opacity", "1");
 			$(".top_mnu").fadeIn(600);
 			$(".top_mnu li a").addClass("fadeInUp animated");
 		};
@@ -43,11 +37,13 @@ $(function() {
 
 	$(".top_text img").animated("fadeInDown", "fadeOutUp");
 	$(".top_text p").animated("fadeInUp", "fadeOutDown");
+	$(".menu-toggle").animated("fadeInRight", "fadeOutLeft");
+	$(".logo").animated("fadeInLeft", "fadeOutRight");
+	$(".mouse_wrapper").animated("fadeInUp", "fadeOutDown");
+	
 
 });
 
-$(window).load(function() {
-
-
-
-}); 
+$(window).on('load', function() {
+	$('.preloader').delay(1500).fadeOut('slow');
+})
