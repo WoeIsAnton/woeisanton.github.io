@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Dual-300';
+  src: url('Dual-300.woff') format('woff'),
+       url('Dual-300.ttf') format('truetype'),
+       url('Dual-300.svg#Dual-300') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dual.300';
+  src: url('dual.300.eot');
+  src: url('dual.300.woff2') format('woff2'),
+       url('dual.300.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

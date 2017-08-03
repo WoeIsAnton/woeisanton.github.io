@@ -1,0 +1,35 @@
+@import "bourbon"
+@import "vars"
+@import "libs"
+
+.section_header
+	text-align: center
+	font-family: 'RalewayRegular', sans-serif
+	text-transform: uppercase
+	h2
+		font-size: em(28px)
+		margin: 0
+	// p
+	// 	font-size: em(17px)
+	// 	margin: 40px 0 35px 0
+	img
+		margin: 40px 0 35px 0
+
+
+.highlighted-menu-item
+	&::after
+		content: ''
+		height: 3px
+		color: $accent
+		display: block
+		background-color: $accent
+		z-index: 500
+		position: absolute
+		margin: -17px 0 0
+		right: 45%
+		left: 45%
+
+
+
+
+@import "media"
