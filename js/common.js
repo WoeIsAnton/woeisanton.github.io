@@ -40,6 +40,10 @@ $(function() {
 	$(".menu-toggle").animated("fadeInRight", "fadeOutLeft");
 	$(".logo").animated("fadeInLeft", "fadeOutRight");
 	$(".mouse_wrapper").animated("fadeInUp", "fadeOutDown");
+
+	$(".from_right").animated("fadeInRight", "fadeOutLeft");
+	$(".from_left").animated("fadeInLeft", "fadeOutRight");
+	$(".from_bottom").animated("fadeInUp", "fadeOutDown");
 	
 	// $('.owl-carousel').owlCarousel({
 	// 		loop:true,
@@ -79,10 +83,10 @@ $(function() {
 						items:2,
 				},
 				992:{
-						items:3,
+						items:2,
 				},
 				1200:{
-						items:4,
+						items:2,
 				}
 		}
 	})
