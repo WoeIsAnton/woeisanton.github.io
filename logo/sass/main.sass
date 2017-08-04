@@ -1,0 +1,193 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+
+// ANIMATIONS LESSON (START)
+
+.box
+	height: $box_h
+	width: $box_h
+	overflow: hidden
+	border-radius: 35px
+	position: relative
+	left: 50%
+	top: 50%
+	margin-top: -$box_h/4
+	margin-left: -$box_h/2
+	&::after
+		position: relative
+		content: ''
+		display: block
+		top: 0
+		left: 0
+		width: 100%
+		height: $view_port
+		background: linear-gradient($origin, $color1 0%, $color2 25%, $color3 50%, $color2 75%, $color1 100%)
+		animation: animate_bg $duration*2 infinite linear
+
+@keyframes animate_bg
+	0%
+		top: 0
+	50%
+		top: $box_h - $view_port
+	100%
+		top: 0
+
+.logo
+	> div
+		position: absolute
+		top: 50%
+		left: 50%
+		border: #fff 9px solid
+		z-index: 2
+		&.logo_dot
+			border: 7px #fff solid
+			border-radius: 10em
+			right: 23%
+			top: 23%
+			left: auto
+	&_border
+		width: 74%
+		height: 74%
+		border-radius: 10em
+		margin: 
+			top: -37%
+			left: -37%
+	&_circle
+		width: 48%
+		height: 48%
+		border-radius: 10em
+		margin: 
+			top: -24%
+			left: -24%
+
+@keyframes animate_box
+	0%
+		transform: scale(0)
+		border-radius: 35px
+	3%
+		transform: scale(1.1)
+		border-radius: 10em
+	6%
+		transform: scale(1)
+		border-radius: 35px
+	94%
+		transform: scale(1)
+		border-radius: 35px
+	97%
+		transform: scale(1.1)
+		border-radius: 10em
+	100%
+		transform: scale(0)
+.box
+	animation: animate_box $duration*2 infinite alternate
+
+@keyframes animate_border
+	0%
+		border-radius: 10em
+		transform: scale(0)
+		opacity: 0
+	2%
+		opacity: 0
+	18%
+		border-radius: 35px
+		transform: scale(1)
+		opacity: 1
+	90%
+		border-radius: 35px
+		transform: scale(1)
+.logo_border
+	animation: animate_border $duration infinite alternate
+
+@keyframes animate_circle
+	0%
+		transform: scale (0)
+		opacity: 0
+	5%
+		transform: scale(0)
+		opacity: 0
+	10%
+		transform: scale(1.3)
+		opacity: 1
+	15%
+		transform: scale(1)
+	95%
+		transform: scale(1)
+		background-color: transparent
+	97%
+		transform: scale(1.2)
+		background-color: #fff
+	100%
+	transform: scale(1)
+.logo_circle
+	animation: animate_circle $duration infinite alternate
+
+@keyframes animate_dot
+	0%
+		opacity: 0
+	20%
+		opacity: 0
+	25%
+		opacity: 1
+	75%
+		opacity: 1
+	90%
+		opacity: 0
+	100%
+		opacity: 0
+.logo_dot
+	animation: animate_dot $duration infinite normal
+
+// ANIMATIONS LESSON (END)
+
+@import "media" // Всегда в конце

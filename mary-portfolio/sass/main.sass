@@ -1,0 +1,379 @@
+@import "bourbon"
+@import "vars"
+@import "libs"
+
+@import "app/libs/animate/animate.sass"
+@import "app/libs/font-awesome/css/font-awesome.sass"
+@import "app/libs/selectize/dist/css/selectize"
+@import "app/libs/magnific-popup/magnific-popup.sass"
+
+//Custom styles here
+a
+	outline: none
+	&:focus,
+	&:hover
+		text-decoration: none
+
+.s-purp
+	background-color: #653137
+
+.s-darkpink 
+	background-color: lighten(#653137, 8%)
+
+.s-pink
+	background-color: #653137
+
+.main-foot
+	background-color: darken(#653137, 20%)
+// 	#655052
+// #50414c
+// 	#613337
+// #55393e
+
+.s-wide
+	padding: 80px 0 80px 0
+	color: $gray
+
+.section_header
+	color: $gray
+	text-align: center
+	text-transform: uppercase
+	h2
+		font-family: $default-font
+		font-size: em(30x)
+		margin: 0 0 20px 0
+		letter-spacing: 3px
+
+
+.info_item
+	font-family: $default-font
+	color: $gray
+	margin: 10px 0 25px 0
+	text-align: center
+	h3
+		font-size: em(17px)
+		text-transform: uppercase
+		margin-bottom: 25px
+		letter-spacing: 2px
+	img
+		margin-bottom: 40px
+	p
+		padding: 0 20px 0 20px
+		font-family: 'RalewayLight', sans-serif
+		span
+			padding-left: 10px
+	.skills,
+	.ints
+		font-size: 95px
+		line-height: 1.25em
+		margin: 10px 0 0 0
+	.skills
+		font-family: 'skill-icons'
+	.ints
+		font-family: 'int-icons'
+
+
+.s-portfolio
+	ul,
+	li
+		list-style-type: none
+		padding: 0
+		margin: 0
+		text-align: center
+		font-family: $default-font
+		+mt(0.5s)
+	li
+		display: inline-block
+		text-transform: uppercase
+		font-size: em(14px)
+		cursor: pointer
+		letter-spacing: 3px
+		color: $gray
+		padding: 5px 10px
+		margin: 0 3px
+		border-bottom: 2px solid transparent
+		&:hover
+			border-bottom: 2px solid $gray
+		&.active
+			color: #fff
+			border-bottom: 2px solid $gray
+			background-color: $accent
+			border-radius: 10px 5px 10px 5px
+	ul
+		margin-bottom: 50px
+
+.portfolio_item
+	padding: 5px
+	img
+		width: 100%
+	.port_item_cont
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		text-align: center
+		background-color: rgba(0, 0, 0, 0.8)
+		opacity: 0
+		+mt(.5s)
+		&:hover
+			opacity: 1
+			padding-top: 20%
+		h3
+			color: $gray
+			text-transform: uppercase
+			font-family: 'RalewayLight', sans-serif
+			font-size: em(14px)
+			letter-spacing: 2px
+			margin-bottom: 0
+		a
+			display: inline-block
+			font-family: 'RalewayBold', sans-serif
+			font-size: em(13px)
+			color: $accent
+			padding: 5px 10px 5px 10px
+			text-transform: uppercase
+			letter-spacing: 2px
+			background-color: transparent
+			border: 1px solid $accent
+			margin-top: 70%
+			&:hover
+				text-decoration: none
+
+.work_deskr
+	position: relative
+	text-align: center
+	color: $gray
+	background-color: #613337
+	max-width: 500px
+	margin: auto
+	border-radius: 10px 10px 0 0
+	p,
+	h2
+		padding: 20px
+		padding-bottom: 0
+	h2
+		margin-bottom: 0
+		text-transform: uppercase
+		margin-bottom: 0
+		letter-spacing: 2px
+	p
+		margin-top: 0
+	img
+		width: 100%
+		margin-top: 20px
+	.mfp-close
+		color: #fff
+		+mt(.25s)
+
+//Magnific-Popup Customize
+.mfp-ready .mfp-figure
+	opacity: 0
+.mfp-zoom-in
+	.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+		opacity: 0
+		transition: all 0.3s ease-out
+		transform: scale(0.95)
+	&.mfp-bg, .mfp-preloader
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-image-loaded .mfp-figure
+		opacity: 1
+		transform: scale(1)
+	&.mfp-ready
+		.mfp-iframe-holder .mfp-iframe-scaler
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg, .mfp-preloader
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+			transform: scale(0.95)
+			opacity: 0
+		&.mfp-bg, .mfp-preloader
+			opacity: 0
+
+.mfp-iframe-scaler
+	overflow: visible
+.mfp-zoom-out-cur
+	cursor: auto
+	.mfp-image-holder .mfp-close
+		cursor: pointer
+.mfp-preloader
+	width: 30px!important
+	height: 30px!important
+	background-color: $accent
+	opacity: 1
+	margin: 0 auto
+	animation: rotateplane 1.2s infinite ease-in-out
+@-webkit-keyframes rotateplane
+	0%
+		-webkit-transform: perspective(120px)
+	50%
+		-webkit-transform: perspective(120px) rotateY(180deg)
+	100%
+		-webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+@keyframes rotateplane
+	0%
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+	50%
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+	100%
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+
+//.my-mfp-zoom-in Animation
+.my-mfp-zoom-in
+	.form-popup
+		opacity: 0
+		transform: scale(0.95)
+	&.mfp-ready .form-popup
+		opacity: 1
+		transform: scale(1)
+	&.mfp-removing .form-popup
+		transform: scale(0.95)
+		opacity: 0
+	&.mfp-bg
+		opacity: 0
+		transition: opacity 0.3s ease-out
+	&.mfp-ready.mfp-bg
+		opacity: 0.9
+	&.mfp-removing.mfp-bg
+		opacity: 0
+//.my-mfp-zoom-in Animation END
+
+
+.s_feedback
+	text-align: right
+	.fa
+		font-size: 27px
+	a
+		color: $gray
+		+mt(.25s)
+		&:hover
+			color: $accent
+
+.cont_info
+	line-height: 1.5em
+	letter-spacing: 1px
+	margin-top: 15px
+	h2
+		font-family: $default-font
+		font-size: em(22px)
+		margin-top: 0
+		margin-bottom: 30px
+	.fa
+		font-size: em(20px)
+		margin-right: 5px
+	p
+		font-family: 'robotoregular', sans-serif
+		font-size: em(18px)
+		margin: 0
+		margin-bottom: 20px
+
+.social_icons
+	p
+		font-family: 'ralewayregular', sans-serif
+		letter-spacing: 1px
+		font-size: em(13px)
+		margin: 0
+	.fa
+		padding: 15px 0
+		margin-left: 10px
+
+.cont_info,
+.social_icons
+	padding: 0 10%
+
+.feedback_form
+	padding: 0 20% 0 10%
+	input, select, textarea
+		margin: 15px 0 30px 0
+		outline: none
+		font-family: 'robotoregular', sans-serif
+		font-size: em(16px)
+		background-color: #fff
+		color: $accent
+		padding: 8px 20px 3px
+		border-radius: 5px
+		border: none
+		display: block
+		width: 100%
+		border-bottom: transparent 4px solid
+		transition: all .5s ease
+		&:focus
+			border-bottom: $accent 4px solid
+			background-color: $gray
+	button
+		margin-top: 10px
+		outline: none
+		font-family: 'ralewayregular', sans-serif
+		font-size: em(15px)
+		color: $gray
+		text-transform: uppercase
+		letter-spacing: 2px
+		background-color: $accent
+		float: left
+		padding: 6px 15px 4px
+		border: none
+		border-radius: 5px
+		border-bottom: 2px solid $gray
+		+mt(.25s)
+		&:hover
+			background-color: darken($accent, 5%)
+		&:focus
+			outline: none
+			border-bottom: none
+			transform: translateY(2px)
+
+
+
+.main-foot
+	padding: 35px 0
+	color: $gray
+	font-size: em(14px)
+	line-height: 1.4
+	margin: 0
+	p
+		font-size: em(14px)
+		letter-spacing: 1px
+	.social_icons
+		float: right
+		padding: 0
+		font-size: em(18px)
+	a
+		color: $gray
+		+mt(.25s)
+		&:hover
+			color: $accent
+	.dd
+		text-align: center
+		padding: 0
+		margin: 0
+	.bh
+		text-decoration: underline
+
+.top
+	position: fixed
+	bottom: 20px
+	right: -120px
+	width: 50px
+	height: 50px
+	background-color: $gray
+	border-radius: 100%
+	cursor: pointer
+	text-align: center
+	opacity: .4
+	+mt (.25s)
+	z-index: 5
+	&:hover
+		opacity: .8
+		background-color: $gray
+	&.active
+		right: 20px
+	.fa
+		color: darken($accent, 15%)
+		font-size: 40px
+		margin-top: 4px
+
+
+@import "media"

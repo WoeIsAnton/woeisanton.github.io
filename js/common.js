@@ -9,7 +9,7 @@ $(function() {
 	$(".top_mnu a"). mPageScroll2id({ 
 		scrollSpeed: 500,
 		scrollEasing: "swing",
-	  highlightClass:"highlighted-menu-item"
+		highlightClass:"highlighted-menu-item"
 	});
 
 	$('.menu-toggle').click(function(){
@@ -40,6 +40,52 @@ $(function() {
 	$(".menu-toggle").animated("fadeInRight", "fadeOutLeft");
 	$(".logo").animated("fadeInLeft", "fadeOutRight");
 	$(".mouse_wrapper").animated("fadeInUp", "fadeOutDown");
+	
+	// $('.owl-carousel').owlCarousel({
+	// 		loop:true,
+	// 		margin:10,
+	// 		nav:true,
+	// 		navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+	// 		responsiveClass:true,
+	// 		responsive:{
+	// 				0:{
+	// 						nav:true,
+	// 						items:3
+	// 				},
+	// 				600:{
+	// 						nav:true,
+	// 						items:3
+	// 				},
+	// 				1000:{
+	// 						nav:true,
+	// 						items:3
+	// 				}
+	// 		}
+	// })
+
+	$('.owl-carousel').owlCarousel({
+		loop:true,
+		margin:10,
+		navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+		nav:true,
+		responsive:{
+				320:{
+						items:1,
+				},
+				480:{
+						items:2,
+				},
+				768:{
+						items:2,
+				},
+				992:{
+						items:3,
+				},
+				1200:{
+						items:4,
+				}
+		}
+	})
 	
 
 });
